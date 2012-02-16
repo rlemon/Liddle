@@ -34,8 +34,9 @@ var handlers = {
 		var jsc = getElm(), selection = get_textarea_selection(jsc), sel_start = jsc.selectionStart, sel_end = jsc.selectionEnd, len = jsc.value.length, pos_start = 0, pos_end = 0;
 		if( selection ) {
 			// cheapy solution, but works.. so far.
-			jsc.value = '\t' + jsc.value.substring(0, sel_start) + selection.replace(/\n/g,'\n\t') + jsc.value.substring(sel_end, len);
-			pos_start = sel_start, pos_end = sel_end + selection.indexOf('\n') + 1;
+			jsc.value = jsc.value.substring(0, sel_start) + '\t' + selection.replace(/\n/g,'\n\t') + jsc.value.substring(sel_end, len);
+			pos_start = sel_start, pos_end = sel_end + selection.match(/\n/g).length + 1;
+			
 		} else {
 			jsc.value = jsc.value.substring(0, sel_start) + '\t' + jsc.value.substring(sel_start, len);
 			pos_start = pos_end = sel_start + 1;

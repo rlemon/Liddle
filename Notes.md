@@ -12,6 +12,10 @@ Suggested Commands
 - insert tab character at caret position, move caret past the tab character.
 - on a range; add a tab character to the beginning of each line in the range. If the range is a single line, add it to the beginning. Keep the range selected.
 
+######SHIFT+TAB
+- remove tab character at caret position, move caret into removed characters position.
+- on a range; remove a tab character from the beginning of each line in the range until there are no more tab characters. If the range is a single line, remove it at the beginning. Keep the range selected.
+
 ######CTRL+D
 - clone current line and insert after said line, do not move caret.
 - on a range; clone current range and append to itself. do not insert any new lines. do not unselect the range.
