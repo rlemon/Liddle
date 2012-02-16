@@ -14,7 +14,7 @@ Suggested Commands
 
 ######SHIFT+TAB
 - remove tab character at caret position, move caret into removed characters position.
-- on a range; remove a tab character from the beginning of each line in the range until there are no more tab characters. If the range is a single line, remove it at the beginning. Keep the range selected.
+- on a range; remove a tab character from the beginning of each line in the range. If the range is a single line, remove it at the beginning. Keep the range selected.
 
 ######CTRL+D
 - clone current line and insert after said line, do not move caret.
