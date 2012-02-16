@@ -43,6 +43,15 @@ var handlers = {
 		}
 		jsc.setSelectionRange(pos_start, pos_end);
 	},
+	shift_tab: function (e) {
+		var jsc = getElm(), selection = get_textarea_selection(jsc), sel_start = jsc.selectionStart, sel_end = jsc.selectionEnd, len = jsc.value.length, pos_start = 0, pos_end = 0;
+		if( selection ) {
+			// kinda works... not at the beginning.
+			jsc.value = jsc.value.substring(0, sel_start-1) + jsc.value.substring(sel_start-1, sel_end).replace(/\n\t/g,'\n') + jsc.value.substring(sel_end, len);
+			pos_start = sel_start, pos_end = sel_end - selection.match(/\n\t/g).length - 1;
+		}
+		jsc.setSelectionRange(pos_start, pos_end);
+	},
 	/* CTRL + D
 	 * No Selection
 	 * 		Duplicate the current line and insert to a new line directly following itself. Do not move the caret.
@@ -56,4 +65,6 @@ var handlers = {
 };
 	
 shortcut.add("Tab", handlers.tab);
+shortcut.add("Shift+Tab", handlers.shift_tab);
 shortcut.add("Ctrl+D", handlers.ctrl_d);
+
