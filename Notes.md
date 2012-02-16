@@ -19,3 +19,7 @@ Suggested Commands
 ######CTRL+D
 - clone current line and insert after said line, do not move caret.
 - on a range; clone current range and append to itself. do not insert any new lines. do not unselect the range.
+
+######ENTER
+- new lines should take on the last indentation of the line previous it.
+- possibly; if the previous line opens a new block ( '{', '[' ) indent one more line.
