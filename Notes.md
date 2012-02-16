@@ -23,3 +23,12 @@ Suggested Commands
 ######ENTER
 - new lines should take on the last indentation of the line previous it.
 - possibly; if the previous line opens a new block ( '{', '[' ) indent one more line.
+
+######ALT+C
+- insert double forward slash at the beginning of the current line, no not move the carat.
+- on a range; wrap the range in [space]/*[space]\<range>[space]*/[space]. do not unselect the range.
+
+######ENTER
+- new lines should take on the last indentation of the line previous it.
+- possibly; if the previous line opens a new block ( '{', '[' ) indent one more line.
+
